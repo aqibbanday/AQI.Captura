@@ -72,6 +72,7 @@ namespace Captura.Windows.MediaFoundation
                 sample.SampleTime = _audioWritten * TenPower7 / _audioInBytesPerSecond;
                 sample.SampleDuration = Count * TenPower7 / _audioInBytesPerSecond;
 
+                if (buffer.CurrentLength > 0)
                 _writer.WriteSample(StreamIndex, sample);
             }
 
